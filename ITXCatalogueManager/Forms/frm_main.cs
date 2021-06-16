@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CefSharp;
 using ITXCatalogueManager.Forms;
 
 namespace ITXCatalogueManager
@@ -14,6 +15,7 @@ namespace ITXCatalogueManager
     public partial class frm_main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static ITXFramework.ITXFramework ITX = new ITXFramework.ITXFramework();
+        public frm_Location it = new frm_Location();
         public frm_main()
         {
             InitializeComponent();
@@ -25,14 +27,19 @@ namespace ITXCatalogueManager
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            frm_Entity it = new frm_Entity();
+
+
+            pnl_control.Controls.Remove(it);
+            pnl_control.Refresh();
+
+            //it.Show();
+
             ITX.cfrm_InsertForm(it, this.pnl_control);
         }
 
         private void frm_main_Load(object sender, EventArgs e)
         {
             bool a = true;
-
             if (a )
             {
                 BeginInvoke(new Action(() =>
@@ -67,5 +74,4 @@ namespace ITXCatalogueManager
         }
     }
 }
-
 //https://www.google.com/maps/search/+36.026453%C2%B0+-102.08660%C2%B0/

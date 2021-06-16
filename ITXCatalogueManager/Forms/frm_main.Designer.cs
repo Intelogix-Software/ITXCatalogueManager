@@ -49,13 +49,13 @@ namespace ITXCatalogueManager
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Entities / Locations";
+            this.ribbonPage1.Text = "Locations";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Entity Capture";
+            this.ribbonPageGroup1.Text = "Location Capture";
             // 
             // barButtonItem1
             // 

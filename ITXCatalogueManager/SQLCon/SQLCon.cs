@@ -17,21 +17,23 @@ namespace ITXCatalogueManager.SQLCon
             using (var conn = new SqlConnection(Properties.Settings.Default.SqlConQuery))
                 try
                 {
-                    using (var command = new SqlCommand("Update_Entities", conn)
+                    using (var command = new SqlCommand("Update_Locations", conn)
                     {
                         CommandType = CommandType.StoredProcedure
                     })
                     {
                         conn.Open();
                         command.Parameters.Clear();
-                        command.Parameters.AddWithValue("@IDl", (object)u.Id_Entity?? DBNull.Value);
+                        command.Parameters.AddWithValue("@IDl", (object)u.Id_Location?? DBNull.Value);
                         command.Parameters.AddWithValue("@IDc", u.Id_City);
-                        command.Parameters.AddWithValue("@IDe", u.Id_EntityType);
+                        command.Parameters.AddWithValue("@IDlt", u.Id_EntityType);
                         command.Parameters.AddWithValue("@lat", u.Latitude);
                         command.Parameters.AddWithValue("@lon", u.Longitude);
                         command.Parameters.AddWithValue("@descrip", u.description);
                         command.Parameters.AddWithValue("@url", u.URL);
-                        command.Parameters.AddWithValue("@code", u.code);
+                        //command.Parameters.AddWithValue("@coords", u.coords);
+                        command.Parameters.AddWithValue("@address", u.address);
+                        command.Parameters.AddWithValue("@zip", u.ZIPcode);
                         command.Parameters.AddWithValue("@Status", u.Status);
                         var Smsg = command.Parameters.Add("msg", SqlDbType.VarChar);
                         Smsg.Direction = ParameterDirection.ReturnValue;
