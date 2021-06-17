@@ -135,8 +135,8 @@ namespace ITXCatalogueManager
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         public DevExpress.XtraEditors.PanelControl pnl_control;
+        public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }
 

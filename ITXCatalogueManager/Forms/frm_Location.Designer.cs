@@ -45,7 +45,10 @@ namespace ITXCatalogueManager.Forms
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btn_preview = new DevExpress.XtraEditors.SimpleButton();
             this.btn_refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
             this.MetaData = new System.Windows.Forms.GroupBox();
             this.lue_locationType = new DevExpress.XtraEditors.LookUpEdit();
             this.list_EntityTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -67,8 +70,8 @@ namespace ITXCatalogueManager.Forms
             this.edt_Lat = new DevExpress.XtraEditors.TextEdit();
             this.edt_Lon = new DevExpress.XtraEditors.TextEdit();
             this.edt_URL = new DevExpress.XtraEditors.TextEdit();
-            this.btn_preview = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -85,8 +88,8 @@ namespace ITXCatalogueManager.Forms
             this.colURL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEntityType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ITXCatalogueManager.Forms.WaitForm1), true, true);
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ITXCatalogueManager.Forms.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.XTP1)).BeginInit();
             this.XTP1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -98,6 +101,12 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel1)).BeginInit();
+            this.splitContainerControl3.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel2)).BeginInit();
+            this.splitContainerControl3.Panel2.SuspendLayout();
+            this.splitContainerControl3.SuspendLayout();
             this.MetaData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_EntityTypesBindingSource1)).BeginInit();
@@ -113,6 +122,9 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
@@ -166,31 +178,72 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl1.Panel2.Controls.Add(this.panelControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
             this.splitContainerControl1.Size = new System.Drawing.Size(836, 552);
-            this.splitContainerControl1.SplitterPosition = 307;
+            this.splitContainerControl1.SplitterPosition = 366;
             this.splitContainerControl1.TabIndex = 0;
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.btn_refresh);
-            this.panelControl1.Controls.Add(this.MetaData);
-            this.panelControl1.Controls.Add(this.groupBox1);
-            this.panelControl1.Controls.Add(this.btn_preview);
-            this.panelControl1.Controls.Add(this.btn_Save);
+            this.panelControl1.Controls.Add(this.splitContainerControl3);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(307, 548);
+            this.panelControl1.Size = new System.Drawing.Size(366, 548);
             this.panelControl1.TabIndex = 0;
+            // 
+            // splitContainerControl3
+            // 
+            this.splitContainerControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl3.Horizontal = false;
+            this.splitContainerControl3.IsSplitterFixed = true;
+            this.splitContainerControl3.Location = new System.Drawing.Point(2, 2);
+            this.splitContainerControl3.Name = "splitContainerControl3";
+            // 
+            // splitContainerControl3.Panel1
+            // 
+            this.splitContainerControl3.Panel1.Controls.Add(this.btn_preview);
+            this.splitContainerControl3.Panel1.Controls.Add(this.btn_refresh);
+            this.splitContainerControl3.Panel1.Controls.Add(this.btn_Save);
+            this.splitContainerControl3.Panel1.Controls.Add(this.MetaData);
+            this.splitContainerControl3.Panel1.Controls.Add(this.groupBox1);
+            this.splitContainerControl3.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl3.Panel2
+            // 
+            this.splitContainerControl3.Panel2.Controls.Add(this.panelControl4);
+            this.splitContainerControl3.Panel2.Text = "Panel2";
+            this.splitContainerControl3.Size = new System.Drawing.Size(362, 544);
+            this.splitContainerControl3.SplitterPosition = 441;
+            this.splitContainerControl3.TabIndex = 18;
+            // 
+            // btn_preview
+            // 
+            this.btn_preview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_preview.ImageOptions.Image")));
+            this.btn_preview.Location = new System.Drawing.Point(61, 255);
+            this.btn_preview.Name = "btn_preview";
+            this.btn_preview.Size = new System.Drawing.Size(119, 85);
+            this.btn_preview.TabIndex = 9;
+            this.btn_preview.Text = "Look Up";
+            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
             // 
             // btn_refresh
             // 
             this.btn_refresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_refresh.ImageOptions.SvgImage")));
-            this.btn_refresh.Location = new System.Drawing.Point(155, 274);
+            this.btn_refresh.Location = new System.Drawing.Point(183, 255);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(119, 85);
             this.btn_refresh.TabIndex = 15;
             this.btn_refresh.Text = "Refresh Map";
             this.btn_refresh.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.ImageOptions.Image")));
+            this.btn_Save.Location = new System.Drawing.Point(61, 346);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(241, 85);
+            this.btn_Save.TabIndex = 10;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // MetaData
             // 
@@ -199,7 +252,7 @@ namespace ITXCatalogueManager.Forms
             this.MetaData.Controls.Add(this.labelControl2);
             this.MetaData.Controls.Add(this.lue_City);
             this.MetaData.Controls.Add(this.lue_state);
-            this.MetaData.Location = new System.Drawing.Point(24, 22);
+            this.MetaData.Location = new System.Drawing.Point(52, 3);
             this.MetaData.Name = "MetaData";
             this.MetaData.Size = new System.Drawing.Size(253, 114);
             this.MetaData.TabIndex = 14;
@@ -262,7 +315,7 @@ namespace ITXCatalogueManager.Forms
             // 
             // lue_City
             // 
-            this.lue_City.Location = new System.Drawing.Point(131, 88);
+            this.lue_City.Location = new System.Drawing.Point(128, 88);
             this.lue_City.Name = "lue_City";
             this.lue_City.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -368,7 +421,7 @@ namespace ITXCatalogueManager.Forms
             this.groupBox1.Controls.Add(this.edt_Lat);
             this.groupBox1.Controls.Add(this.edt_Lon);
             this.groupBox1.Controls.Add(this.edt_URL);
-            this.groupBox1.Location = new System.Drawing.Point(24, 142);
+            this.groupBox1.Location = new System.Drawing.Point(52, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(253, 126);
             this.groupBox1.TabIndex = 13;
@@ -425,25 +478,26 @@ namespace ITXCatalogueManager.Forms
             this.edt_URL.Size = new System.Drawing.Size(244, 20);
             this.edt_URL.TabIndex = 8;
             // 
-            // btn_preview
+            // panelControl4
             // 
-            this.btn_preview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_preview.ImageOptions.Image")));
-            this.btn_preview.Location = new System.Drawing.Point(33, 274);
-            this.btn_preview.Name = "btn_preview";
-            this.btn_preview.Size = new System.Drawing.Size(119, 85);
-            this.btn_preview.TabIndex = 9;
-            this.btn_preview.Text = "Look Up";
-            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
+            this.panelControl4.Controls.Add(this.pictureBox1);
+            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl4.Location = new System.Drawing.Point(0, 0);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(362, 99);
+            this.panelControl4.TabIndex = 17;
             // 
-            // btn_Save
+            // pictureBox1
             // 
-            this.btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.ImageOptions.Image")));
-            this.btn_Save.Location = new System.Drawing.Point(33, 365);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(241, 85);
-            this.btn_Save.TabIndex = 10;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ITXCatalogueManager.Properties.Resources.torreEiffel;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(358, 95);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelControl2
             // 
@@ -452,7 +506,7 @@ namespace ITXCatalogueManager.Forms
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(521, 548);
+            this.panelControl2.Size = new System.Drawing.Size(462, 548);
             this.panelControl2.TabIndex = 0;
             // 
             // chromiumWebBrowser1
@@ -461,7 +515,7 @@ namespace ITXCatalogueManager.Forms
             this.chromiumWebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chromiumWebBrowser1.Location = new System.Drawing.Point(2, 2);
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(517, 544);
+            this.chromiumWebBrowser1.Size = new System.Drawing.Size(458, 544);
             this.chromiumWebBrowser1.TabIndex = 1;
             // 
             // webBrowser1
@@ -470,7 +524,7 @@ namespace ITXCatalogueManager.Forms
             this.webBrowser1.Location = new System.Drawing.Point(2, 2);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(517, 544);
+            this.webBrowser1.Size = new System.Drawing.Size(458, 544);
             this.webBrowser1.TabIndex = 0;
             // 
             // xtraTabPage2
@@ -602,9 +656,9 @@ namespace ITXCatalogueManager.Forms
             this.colCity.Visible = true;
             this.colCity.VisibleIndex = 5;
             // 
-            // splashScreenManager1
+            // splashScreenManager2
             // 
-            this.splashScreenManager1.ClosingDelay = 500;
+            this.splashScreenManager2.ClosingDelay = 500;
             // 
             // frm_Location
             // 
@@ -626,6 +680,12 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel1)).EndInit();
+            this.splitContainerControl3.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel2)).EndInit();
+            this.splitContainerControl3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
+            this.splitContainerControl3.ResumeLayout(false);
             this.MetaData.ResumeLayout(false);
             this.MetaData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).EndInit();
@@ -642,6 +702,9 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
@@ -698,7 +761,6 @@ namespace ITXCatalogueManager.Forms
         private DevExpress.XtraGrid.Columns.GridColumn colCity;
         private System.Windows.Forms.GroupBox groupBox1;
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraEditors.TextEdit edt_address;
         private DevExpress.XtraEditors.TextEdit edt_zip;
         private System.Windows.Forms.BindingSource list_EntityTypesBindingSource1;
@@ -708,5 +770,9 @@ namespace ITXCatalogueManager.Forms
         private System.Windows.Forms.GroupBox MetaData;
         private DevExpress.XtraEditors.SimpleButton btn_refresh;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2;
     }
 }

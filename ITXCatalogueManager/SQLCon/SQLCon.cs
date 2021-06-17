@@ -31,7 +31,7 @@ namespace ITXCatalogueManager.SQLCon
                         command.Parameters.AddWithValue("@lon", u.Longitude);
                         command.Parameters.AddWithValue("@descrip", u.description);
                         command.Parameters.AddWithValue("@url", u.URL);
-                        //command.Parameters.AddWithValue("@coords", u.coords);
+                        command.Parameters.AddWithValue("@coords", u.coords);
                         command.Parameters.AddWithValue("@address", u.address);
                         command.Parameters.AddWithValue("@zip", u.ZIPcode);
                         command.Parameters.AddWithValue("@Status", u.Status);
@@ -47,6 +47,7 @@ namespace ITXCatalogueManager.SQLCon
                         }
                         conn.Close();
                     }
+                    System.Windows.Forms.MessageBox.Show("Save Succeed");
                     //Console.WriteLine(dt.Rows[0].ItemArray[1].ToString()+"+");
                 }
                 catch (SqlException a)

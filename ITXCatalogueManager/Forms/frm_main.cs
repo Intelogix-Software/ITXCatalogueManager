@@ -45,7 +45,7 @@ namespace ITXCatalogueManager
                 BeginInvoke(new Action(() =>
                 {
                     Show();
-                    splashScreenManager1.ShowWaitForm();
+                    //splashScreenManager1.ShowWaitForm();
                     SecureInstaller.SecureUpdate sec = new SecureInstaller.SecureUpdate(@"\\35.223.136.179\01 IT-Apps\ITXCatalogueManager");
                     sec.InstallUpdateSyncWithInfo();
 
@@ -55,7 +55,7 @@ namespace ITXCatalogueManager
                         Update();
                     }
 
-                    splashScreenManager1.CloseWaitForm();
+                    //splashScreenManager1.CloseWaitForm();
                 }));
 
 
