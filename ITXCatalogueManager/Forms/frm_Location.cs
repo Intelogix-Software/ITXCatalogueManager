@@ -53,6 +53,8 @@ namespace ITXCatalogueManager.Forms
             SDS_States.Fill();
             splashScreenManager2.CloseWaitForm();
             chromiumWebBrowser1.Load("https://www.google.com.mx/maps/");
+           
+
         }
 
         public string dourl(string lat, string lon)
@@ -76,8 +78,10 @@ namespace ITXCatalogueManager.Forms
                 ne.ZIPcode = edt_zip.Text;
                 ne.Status = true;
                 SQLCon.SQLCon con = new SQLCon.SQLCon();
-                
-                Console.WriteLine(con.sendNewEntity(ne).Rows[1]);
+                toastNotificationsManager1.Notifications[0].Body=
+                con.sendNewEntity(ne).Rows[0].ItemArray[1].ToString();
+                toastNotificationsManager1.Notifications[0].Header = "";
+                toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
                 lue_locationType.EditValue = null;
                 lue_City.EditValue = null;
                 lue_state.EditValue = null;

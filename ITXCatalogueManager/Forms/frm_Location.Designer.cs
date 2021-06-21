@@ -82,14 +82,17 @@ namespace ITXCatalogueManager.Forms
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.SDS_entitiesGrid = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCoords = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colURL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEntityType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCity = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ITXCatalogueManager.Forms.WaitForm1), true, true);
+            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLatitude = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLongitude = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCoords = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colURL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colZIPCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.XTP1)).BeginInit();
             this.XTP1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -139,6 +142,7 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // XTP1
@@ -605,60 +609,84 @@ namespace ITXCatalogueManager.Forms
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCode,
             this.colDescription,
+            this.colLatitude,
+            this.colLongitude,
             this.colCoords,
             this.colURL,
-            this.colEntityType,
-            this.colCity});
+            this.colStatus,
+            this.colAddress,
+            this.colZIPCode});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // colCode
+            // splashScreenManager2
             // 
-            this.colCode.FieldName = "Code";
-            this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 0;
+            this.splashScreenManager2.ClosingDelay = 500;
+            // 
+            // toastNotificationsManager1
+            // 
+            this.toastNotificationsManager1.ApplicationId = "e63b884b-f54d-4ccf-b0be-6261663925fc";
+            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("b86989fa-80cc-44d7-9e8d-f5bc56f92984", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+                    "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text02)});
             // 
             // colDescription
             // 
             this.colDescription.FieldName = "Description";
             this.colDescription.Name = "colDescription";
             this.colDescription.Visible = true;
-            this.colDescription.VisibleIndex = 1;
+            this.colDescription.VisibleIndex = 0;
+            // 
+            // colLatitude
+            // 
+            this.colLatitude.FieldName = "Latitude";
+            this.colLatitude.Name = "colLatitude";
+            this.colLatitude.Visible = true;
+            this.colLatitude.VisibleIndex = 1;
+            // 
+            // colLongitude
+            // 
+            this.colLongitude.FieldName = "Longitude";
+            this.colLongitude.Name = "colLongitude";
+            this.colLongitude.Visible = true;
+            this.colLongitude.VisibleIndex = 2;
             // 
             // colCoords
             // 
             this.colCoords.FieldName = "Coords";
             this.colCoords.Name = "colCoords";
             this.colCoords.Visible = true;
-            this.colCoords.VisibleIndex = 2;
+            this.colCoords.VisibleIndex = 3;
             // 
             // colURL
             // 
             this.colURL.FieldName = "URL";
             this.colURL.Name = "colURL";
             this.colURL.Visible = true;
-            this.colURL.VisibleIndex = 3;
+            this.colURL.VisibleIndex = 4;
             // 
-            // colEntityType
+            // colStatus
             // 
-            this.colEntityType.FieldName = "EntityType";
-            this.colEntityType.Name = "colEntityType";
-            this.colEntityType.Visible = true;
-            this.colEntityType.VisibleIndex = 4;
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 5;
             // 
-            // colCity
+            // colAddress
             // 
-            this.colCity.FieldName = "City";
-            this.colCity.Name = "colCity";
-            this.colCity.Visible = true;
-            this.colCity.VisibleIndex = 5;
+            this.colAddress.FieldName = "Address";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.Visible = true;
+            this.colAddress.VisibleIndex = 6;
             // 
-            // splashScreenManager2
+            // colZIPCode
             // 
-            this.splashScreenManager2.ClosingDelay = 500;
+            this.colZIPCode.FieldName = "ZIPCode";
+            this.colZIPCode.Name = "colZIPCode";
+            this.colZIPCode.Visible = true;
+            this.colZIPCode.VisibleIndex = 7;
             // 
             // frm_Location
             // 
@@ -719,6 +747,7 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -753,12 +782,6 @@ namespace ITXCatalogueManager.Forms
         private DevExpress.DataAccess.Sql.SqlDataSource SDS_entitiesGrid;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.Columns.GridColumn colCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
-        private DevExpress.XtraGrid.Columns.GridColumn colCoords;
-        private DevExpress.XtraGrid.Columns.GridColumn colURL;
-        private DevExpress.XtraGrid.Columns.GridColumn colEntityType;
-        private DevExpress.XtraGrid.Columns.GridColumn colCity;
         private System.Windows.Forms.GroupBox groupBox1;
         private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
         private DevExpress.XtraEditors.TextEdit edt_address;
@@ -774,5 +797,14 @@ namespace ITXCatalogueManager.Forms
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl3;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescription;
+        private DevExpress.XtraGrid.Columns.GridColumn colLatitude;
+        private DevExpress.XtraGrid.Columns.GridColumn colLongitude;
+        private DevExpress.XtraGrid.Columns.GridColumn colCoords;
+        private DevExpress.XtraGrid.Columns.GridColumn colURL;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colAddress;
+        private DevExpress.XtraGrid.Columns.GridColumn colZIPCode;
     }
 }

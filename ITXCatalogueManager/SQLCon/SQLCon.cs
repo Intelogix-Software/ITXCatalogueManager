@@ -47,7 +47,7 @@ namespace ITXCatalogueManager.SQLCon
                         }
                         conn.Close();
                     }
-                    System.Windows.Forms.MessageBox.Show("Save Succeed");
+                    //System.Windows.Forms.MessageBox.Show("Save Succeed");
                     //Console.WriteLine(dt.Rows[0].ItemArray[1].ToString()+"+");
                 }
                 catch (SqlException a)

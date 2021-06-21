@@ -19,6 +19,5 @@ namespace ITXCatalogueManager.Classes
         public string address { get; set; }
         public string ZIPcode { get; set; }
         public bool Status { get; set; }
-
     }
 }
