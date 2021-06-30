@@ -52,8 +52,10 @@ namespace ITXCatalogueManager.Forms
             // Fill the SqlDataSource asynchronously
             SDS_States.Fill();
             splashScreenManager2.CloseWaitForm();
-            chromiumWebBrowser1.Load("https://www.google.com.mx/maps/");
-           
+            //toastNotificationsManager1.Notifications[0].Body = "A";
+            ////toastNotificationsManager1.Notifications[0].Body2 = "B";
+            //toastNotificationsManager1.Notifications[0].Header = "C";
+            //toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
 
         }
 
@@ -331,6 +333,11 @@ namespace ITXCatalogueManager.Forms
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frm_Location_Load(object sender, EventArgs e)
+        {
+            chromiumWebBrowser1.Load("https://www.google.com.mx/maps");
         }
     }
 }

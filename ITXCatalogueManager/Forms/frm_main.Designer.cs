@@ -118,6 +118,7 @@ namespace ITXCatalogueManager
             this.Name = "frm_main";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
             this.Load += new System.EventHandler(this.frm_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.list_EntityTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
