@@ -12,28 +12,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Xunit;
 
 namespace ITXCatalogueManager.Forms
 {
     public partial class frm_Location : DevExpress.XtraEditors.XtraForm
     {
-
-
         public string lat;
         public string lon;
         public string urlb;
+
         public string data { get; set; }
         public string datac { get; set; }
         public string description { get; set;  }
         public frm_Location()
         {
             InitializeComponent();
-            var settings = new CefSharp.WinForms.CefSettings();
-            settings.LogSeverity = LogSeverity.Verbose;
-            settings.CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharp\\Cache");
-           
-            Cef.Initialize(settings);
             
+            Cef.EnableHighDPISupport();
+
+            //var exitCode = CefSharp.BrowserSubprocess.SelfHost.Main(args);
+
+            //if (exitCode >= 0)
+            //{
+            //    return;
+            //}
+
+            var settings = new CefSettings()
+            {
+                //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
+                CachePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharp\\Cache"),
+                BrowserSubprocessPath = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName
+            };
+            
+
+            //Perform dependency check to make sure all relevant resources are in our output directory.
+            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
+
+            //var browser = new BrowserForm();
+            //Application.Run(browser);
+
+
             //chromiumWebBrowser1.InitializeLifetimeService();
             //lat = "+36.026453";
             //lon = "-102.08660";
@@ -58,6 +77,7 @@ namespace ITXCatalogueManager.Forms
             //toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
 
         }
+       
 
         public string dourl(string lat, string lon)
         {
@@ -115,38 +135,58 @@ namespace ITXCatalogueManager.Forms
         {
             //edt_URL.Text = dourl(edt_Lat.Text,edt_Lon.Text);
         }
-
+        
         private async void btn_preview_Click(object sender, EventArgs e)
         {
-           //edt_URL.Text = chromiumWebBrowser1.Address.ToString();
+            string s2 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
+            EvaluateScript(s2,0,TimeSpan.FromSeconds(1),cwb1).GetAwaiter().GetResult();
+
+            //edt_URL.Text = chromiumWebBrowser1.Address.ToString();
 
             //Coordendas 
             /////////////////////////////
+            ///
+
+            //string s2 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
+            //while (!cwb1.CanExecuteJavascriptInMainFrame)
+            //{ }
+            //chromiumWebBrowser1.ExecuteScriptAsync(s2);
+
+
+
+
+
+            //Task<JavascriptResponse> res = await cwb1 .EvaluateScriptAsync(s2);
+
+
+
+
             try
             {
                 //description
                 string script = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script).ContinueWith(x =>
-                {
-                    var response = x.Result;
-                    if (response.Success && response.Result != null)
-                    {
-                        data = response.Result.ToString();
-                        //MessageBox.Show(data);
-                        Console.WriteLine(1);
 
-
-                    }
-                });
+                //var results =  cwb1.ExecuteScriptAsync(script).ContinueWith(t =>
+                //  {
+                //      var response = t.Result;
+                //      if (response.Success && response.Result != null)
+                //      {
+                //          data= response.Result.ToString();
+                //      }
+                //  });
+                
             }
-            catch { }
+            catch (Exception ee) { 
+                Console.WriteLine(ee.Message); 
+                Console.WriteLine(ee.StackTrace);   
+                MessageBox.Show(ee.Message); }
 
             
             try
             {
                 //Clickderecho coordenadas  DONE
                 string script = string.Format("document.getElementsByClassName('nbpPqf-menu-x3Eknd-text')[0].innerText;");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script).ContinueWith(x =>
+                await cwb1.GetMainFrame().EvaluateScriptAsync(script).ContinueWith(x =>
                 {
                     var response = x.Result;
                     if (response.Success && response.Result != null)
@@ -159,13 +199,13 @@ namespace ITXCatalogueManager.Forms
                     }
                 });
             }
-            catch { }
+            catch (Exception ee) { MessageBox.Show(ee.Message); }
             ////////////////////////////////////////////////
             try
             {
                 //coords on no location pin try0
                 string script22 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-VdSJob')[0].innerText;");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script22).ContinueWith(x =>
+                await cwb1.GetMainFrame().EvaluateScriptAsync(script22).ContinueWith(x =>
                 {
                     var response = x.Result;
 
@@ -187,7 +227,7 @@ namespace ITXCatalogueManager.Forms
             {
                 //coords on no location pin try1
                 string script22 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-VdSJob')[1].innerText;");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script22).ContinueWith(x =>
+                await cwb1.GetMainFrame().EvaluateScriptAsync(script22).ContinueWith(x =>
                 {
                     var response = x.Result;
 
@@ -221,8 +261,8 @@ namespace ITXCatalogueManager.Forms
             {
                 //description on pin 
                 string script2 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
-                    //".getAttribute('class');");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script2).ContinueWith(x =>
+                //".getAttribute('class');");
+                await cwb1.GetMainFrame().EvaluateScriptAsync(script2).ContinueWith(x =>
                 {
                     var response = x.Result;
 
@@ -246,7 +286,7 @@ namespace ITXCatalogueManager.Forms
             {
                 //on know location
                 string script2 = string.Format("document.getElementsByClassName('RcCsl dqIYcf-RWgCYc-text w4vB1d C9yzub-TSZdd-on-hover-YuD1xf AG25L')[0].innerText;");
-                await chromiumWebBrowser1.EvaluateScriptAsync(script2).ContinueWith(x =>
+                await cwb1.GetMainFrame().EvaluateScriptAsync(script2).ContinueWith(x =>
                 {
                     var response = x.Result;
 
@@ -267,7 +307,7 @@ namespace ITXCatalogueManager.Forms
                 {
 
                     string script2 = string.Format("document.getElementsByClassName('section-info gm2-body-2 section-info-hoverable')[0].innerText;");
-                    await chromiumWebBrowser1.EvaluateScriptAsync(script2).ContinueWith(x =>
+                    await cwb1.GetMainFrame().EvaluateScriptAsync(script2).ContinueWith(x =>
                     {
                         var response = x.Result;
 
@@ -288,8 +328,8 @@ namespace ITXCatalogueManager.Forms
                 int ii = 1;
                 foreach (string i in aa)
                 {
-                    int s= aa.Length;
-                    if (s != ii)
+                    int sS= aa.Length;
+                    if (sS != ii)
                     {
                         address += i+", ";
                     }
@@ -327,17 +367,94 @@ namespace ITXCatalogueManager.Forms
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            chromiumWebBrowser1.Refresh();
+            cwb1.Refresh();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void frm_Location_Load(object sender, EventArgs e)
         {
-            chromiumWebBrowser1.Load("https://www.google.com.mx/maps");
+            cwb1.Load("https://www.google.com.mx/maps");
+        }
+
+        private void cwb1_IsBrowserInitializedChanged(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("Test: " + cwb1.IsBrowserInitialized);
+        }
+
+        private async void cwb1_FrameLoadStart(object sender, FrameLoadStartEventArgs e)
+        {
+            //string s2 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
+            //using (cwb1)
+            //{
+            //    Console.WriteLine(cwb1.CanExecuteJavascriptInMainFrame + "CAN");
+            //    //await browser.LoadUrlAsync();
+            //    await cwb1.GetMainFrame().EvaluateScriptAsync(s2).ContinueWith(s =>
+            //    {
+            //        var response = s.Result;
+            //        if (response.Success && response.Result != null)
+            //        {
+            //            data = s.Result.ToString();
+            //            MessageBox.Show(data);
+            //        }
+            //    });
+            //}
+        }
+
+        private void cwb1_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
+        {
+            Console.WriteLine();
+        }
+        public async Task<object> EvaluateScript(string script, object defaultValue, TimeSpan timeout, ChromiumWebBrowser _browser)
+        {
+            object result = defaultValue;
+            if (_browser.IsBrowserInitialized && !_browser.IsDisposed && !_browser.Disposing)
+            {
+                try
+                {
+                    var task = _browser.EvaluateScriptAsync(script, timeout);
+                    await task.ContinueWith(res => {
+                        if (!res.IsFaulted)
+                        {
+                            var response = res.Result;
+                            result = response.Result;// ? (response.Result ?? "null") : response.Message;
+                        }
+                    }).ConfigureAwait(false); // <-- This makes the task to synchronize on a different context
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.InnerException.Message);
+                }
+            }
+            return result;
+        }
+        private void cwb1_LoadingStateChanged(object sender, LoadingStateChangedEventArgs e)
+        {
+            //string s2 = string.Format("document.getElementsByClassName('x3AX1-LfntMc-header-title-title gm2-headline-5')[0].innerText;");
+
+            //if (e.IsLoading == false)
+            //{
+            //    Task<CefSharp.JavascriptResponse> response = cwb1.EvaluateScriptAsync(s2);
+
+            //    Func<Task<CefSharp.JavascriptResponse>> func = () =>
+            //    {
+            //        response.Wait();
+            //        return response;
+            //    };
+            //    func.BeginInvoke((ar) =>
+            //    {
+            //        var result = func.EndInvoke(ar);
+            //        if (result.Result.Result != null)
+            //        {
+
+            //            MessageBox.Show( result.Result.Result.ToString());
+            //        }
+            //    },
+            //    null);
+            //}
         }
     }
 }

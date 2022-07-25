@@ -47,9 +47,9 @@ namespace ITXCatalogueManager.Forms
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.list_EntityTypesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.SDS_Entities = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.list_CitiesByStateBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -73,6 +73,11 @@ namespace ITXCatalogueManager.Forms
             this.gridLookUpEdit6 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView11 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lue_state = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.States = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lue_City = new DevExpress.XtraEditors.LookUpEdit();
+            this.lue_locationType = new DevExpress.XtraEditors.LookUpEdit();
             this.splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ITXCatalogueManager.Forms.WaitForm1), true, true);
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
@@ -116,8 +121,6 @@ namespace ITXCatalogueManager.Forms
             this.panelControl21 = new DevExpress.XtraEditors.PanelControl();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panelControl22 = new DevExpress.XtraEditors.PanelControl();
-            this.chromiumWebBrowser5 = new CefSharp.WinForms.ChromiumWebBrowser();
-            this.webBrowser5 = new System.Windows.Forms.WebBrowser();
             this.xtraTabPage11 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl17 = new DevExpress.XtraEditors.SplitContainerControl();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
@@ -156,6 +159,7 @@ namespace ITXCatalogueManager.Forms
             this.xtraTabControl5 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -167,35 +171,29 @@ namespace ITXCatalogueManager.Forms
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colZIPCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl3 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.btn_preview = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_refresh = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
+            this.MetaData = new System.Windows.Forms.GroupBox();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.edt_address = new DevExpress.XtraEditors.TextEdit();
+            this.edt_zip = new DevExpress.XtraEditors.TextEdit();
+            this.edt_Description = new DevExpress.XtraEditors.TextEdit();
+            this.edt_Lat = new DevExpress.XtraEditors.TextEdit();
+            this.edt_Lon = new DevExpress.XtraEditors.TextEdit();
+            this.edt_URL = new DevExpress.XtraEditors.TextEdit();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.edt_URL = new DevExpress.XtraEditors.TextEdit();
-            this.edt_Lon = new DevExpress.XtraEditors.TextEdit();
-            this.edt_Lat = new DevExpress.XtraEditors.TextEdit();
-            this.edt_Description = new DevExpress.XtraEditors.TextEdit();
-            this.edt_zip = new DevExpress.XtraEditors.TextEdit();
-            this.edt_address = new DevExpress.XtraEditors.TextEdit();
-            this.MetaData = new System.Windows.Forms.GroupBox();
-            this.lue_state = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.States = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lue_City = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lue_locationType = new DevExpress.XtraEditors.LookUpEdit();
-            this.btn_Save = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_refresh = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_preview = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.cwb1 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.XTP1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraFolderBrowserDialog1 = new DevExpress.XtraEditors.XtraFolderBrowserDialog(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.list_EntityTypesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_CitiesByStateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_StatesBindingSource)).BeginInit();
@@ -212,6 +210,10 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit12.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_state.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_City.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl7.Panel1)).BeginInit();
@@ -266,7 +268,6 @@ namespace ITXCatalogueManager.Forms
             this.panelControl21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).BeginInit();
-            this.panelControl22.SuspendLayout();
             this.xtraTabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl17.Panel1)).BeginInit();
@@ -324,8 +325,6 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
             this.splitContainerControl1.Panel2.SuspendLayout();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).BeginInit();
@@ -334,21 +333,19 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel2)).BeginInit();
             this.splitContainerControl3.Panel2.SuspendLayout();
             this.splitContainerControl3.SuspendLayout();
+            this.MetaData.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_address.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_zip.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Description.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Description.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_zip.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_address.Properties)).BeginInit();
-            this.MetaData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_state.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_City.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.XTP1)).BeginInit();
             this.XTP1.SuspendLayout();
             this.SuspendLayout();
@@ -672,6 +669,91 @@ namespace ITXCatalogueManager.Forms
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 0;
+            // 
+            // lue_state
+            // 
+            this.lue_state.Location = new System.Drawing.Point(6, 88);
+            this.lue_state.Name = "lue_state";
+            this.lue_state.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_state.Properties.DataSource = this.list_StatesBindingSource;
+            this.lue_state.Properties.DisplayMember = "Description_1";
+            this.lue_state.Properties.NullText = "";
+            this.lue_state.Properties.NullValuePrompt = "State";
+            this.lue_state.Properties.PopupFormSize = new System.Drawing.Size(100, 0);
+            this.lue_state.Properties.PopupView = this.gridLookUpEdit1View;
+            this.lue_state.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
+            this.lue_state.Properties.ValueMember = "ID_State_1";
+            this.lue_state.Size = new System.Drawing.Size(119, 20);
+            this.lue_state.TabIndex = 2;
+            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule10.ErrorText = "This value is not valid";
+            this.dxValidationProvider1.SetValidationRule(this.lue_state, conditionValidationRule10);
+            this.lue_state.EditValueChanged += new System.EventHandler(this.lue_state_EditValueChanged);
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.States});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // States
+            // 
+            this.States.FieldName = "Description_1";
+            this.States.Name = "States";
+            this.States.Visible = true;
+            this.States.VisibleIndex = 0;
+            // 
+            // lue_City
+            // 
+            this.lue_City.Location = new System.Drawing.Point(128, 88);
+            this.lue_City.Name = "lue_City";
+            this.lue_City.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_City.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_City", "ID_City", 45, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Cities", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_State", "ID_State", 52, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description_1", "Description_1", 74, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lue_City.Properties.DataSource = this.list_CitiesByStateBindingSource;
+            this.lue_City.Properties.DisplayMember = "Description";
+            this.lue_City.Properties.NullText = "";
+            this.lue_City.Properties.NullValuePrompt = "City";
+            this.lue_City.Properties.PopupFormMinSize = new System.Drawing.Size(119, 0);
+            this.lue_City.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
+            this.lue_City.Properties.ValueMember = "ID_City";
+            this.lue_City.Size = new System.Drawing.Size(119, 20);
+            this.lue_City.TabIndex = 3;
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule11.ErrorText = "Need to select a value";
+            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider1.SetValidationRule(this.lue_City, conditionValidationRule11);
+            // 
+            // lue_locationType
+            // 
+            this.lue_locationType.Location = new System.Drawing.Point(6, 40);
+            this.lue_locationType.Name = "lue_locationType";
+            this.lue_locationType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lue_locationType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_EntityType", "ID_Entity Type", 81, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lue_locationType.Properties.DataSource = this.list_EntityTypesBindingSource1;
+            this.lue_locationType.Properties.DisplayMember = "Description";
+            this.lue_locationType.Properties.NullText = "";
+            this.lue_locationType.Properties.NullValuePrompt = "Entity Type";
+            this.lue_locationType.Properties.PopupFormMinSize = new System.Drawing.Size(119, 0);
+            this.lue_locationType.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
+            this.lue_locationType.Properties.ValueMember = "ID_LocationType";
+            this.lue_locationType.Size = new System.Drawing.Size(244, 20);
+            this.lue_locationType.TabIndex = 1;
+            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule12.ErrorText = "This value is not valid";
+            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider1.SetValidationRule(this.lue_locationType, conditionValidationRule12);
             // 
             // splashScreenManager2
             // 
@@ -1109,32 +1191,11 @@ namespace ITXCatalogueManager.Forms
             // 
             // panelControl22
             // 
-            this.panelControl22.Controls.Add(this.chromiumWebBrowser5);
-            this.panelControl22.Controls.Add(this.webBrowser5);
             this.panelControl22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl22.Location = new System.Drawing.Point(0, 0);
             this.panelControl22.Name = "panelControl22";
             this.panelControl22.Size = new System.Drawing.Size(462, 548);
             this.panelControl22.TabIndex = 0;
-            // 
-            // chromiumWebBrowser5
-            // 
-            this.chromiumWebBrowser5.ActivateBrowserOnCreation = false;
-// TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.chromiumWebBrowser5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumWebBrowser5.Location = new System.Drawing.Point(2, 2);
-            this.chromiumWebBrowser5.Name = "chromiumWebBrowser5";
-            this.chromiumWebBrowser5.Size = new System.Drawing.Size(458, 544);
-            this.chromiumWebBrowser5.TabIndex = 1;
-            // 
-            // webBrowser5
-            // 
-            this.webBrowser5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser5.Location = new System.Drawing.Point(2, 2);
-            this.webBrowser5.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser5.Name = "webBrowser5";
-            this.webBrowser5.Size = new System.Drawing.Size(458, 544);
-            this.webBrowser5.TabIndex = 0;
             // 
             // xtraTabPage11
             // 
@@ -1521,6 +1582,16 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl2.SplitterPosition = 89;
             this.splitContainerControl2.TabIndex = 0;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.simpleButton1.Location = new System.Drawing.Point(11, 3);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(114, 84);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.gridControl1);
@@ -1613,16 +1684,6 @@ namespace ITXCatalogueManager.Forms
             this.colZIPCode.Visible = true;
             this.colZIPCode.VisibleIndex = 7;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(11, 3);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(114, 84);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.splitContainerControl1);
@@ -1650,35 +1711,6 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl1.Size = new System.Drawing.Size(836, 552);
             this.splitContainerControl1.SplitterPosition = 366;
             this.splitContainerControl1.TabIndex = 0;
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.chromiumWebBrowser1);
-            this.panelControl2.Controls.Add(this.webBrowser1);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 0);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(462, 548);
-            this.panelControl2.TabIndex = 0;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(2, 2);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(458, 544);
-            this.webBrowser1.TabIndex = 0;
-            // 
-            // chromiumWebBrowser1
-            // 
-            this.chromiumWebBrowser1.ActivateBrowserOnCreation = false;
-// TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
-            this.chromiumWebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chromiumWebBrowser1.Location = new System.Drawing.Point(2, 2);
-            this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
-            this.chromiumWebBrowser1.Size = new System.Drawing.Size(458, 544);
-            this.chromiumWebBrowser1.TabIndex = 1;
             // 
             // panelControl1
             // 
@@ -1714,6 +1746,131 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl3.SplitterPosition = 441;
             this.splitContainerControl3.TabIndex = 18;
             // 
+            // btn_preview
+            // 
+            this.btn_preview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_preview.ImageOptions.Image")));
+            this.btn_preview.Location = new System.Drawing.Point(61, 255);
+            this.btn_preview.Name = "btn_preview";
+            this.btn_preview.Size = new System.Drawing.Size(119, 85);
+            this.btn_preview.TabIndex = 9;
+            this.btn_preview.Text = "Look Up";
+            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_refresh.ImageOptions.SvgImage")));
+            this.btn_refresh.Location = new System.Drawing.Point(183, 255);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(119, 85);
+            this.btn_refresh.TabIndex = 15;
+            this.btn_refresh.Text = "Refresh Map";
+            this.btn_refresh.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.ImageOptions.Image")));
+            this.btn_Save.Location = new System.Drawing.Point(61, 346);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(241, 85);
+            this.btn_Save.TabIndex = 10;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // MetaData
+            // 
+            this.MetaData.Controls.Add(this.lue_locationType);
+            this.MetaData.Controls.Add(this.labelControl1);
+            this.MetaData.Controls.Add(this.labelControl2);
+            this.MetaData.Controls.Add(this.lue_City);
+            this.MetaData.Controls.Add(this.lue_state);
+            this.MetaData.Location = new System.Drawing.Point(52, 3);
+            this.MetaData.Name = "MetaData";
+            this.MetaData.Size = new System.Drawing.Size(253, 114);
+            this.MetaData.TabIndex = 14;
+            this.MetaData.TabStop = false;
+            this.MetaData.Text = "Input Data";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(103, 21);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(67, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Location Type";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(103, 69);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(49, 13);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "State/City";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.edt_address);
+            this.groupBox1.Controls.Add(this.edt_zip);
+            this.groupBox1.Controls.Add(this.edt_Description);
+            this.groupBox1.Controls.Add(this.edt_Lat);
+            this.groupBox1.Controls.Add(this.edt_Lon);
+            this.groupBox1.Controls.Add(this.edt_URL);
+            this.groupBox1.Location = new System.Drawing.Point(52, 123);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(253, 126);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Look Up Data";
+            // 
+            // edt_address
+            // 
+            this.edt_address.Location = new System.Drawing.Point(6, 44);
+            this.edt_address.Name = "edt_address";
+            this.edt_address.Properties.NullValuePrompt = "Address";
+            this.edt_address.Size = new System.Drawing.Size(244, 20);
+            this.edt_address.TabIndex = 9;
+            // 
+            // edt_zip
+            // 
+            this.edt_zip.Location = new System.Drawing.Point(186, 20);
+            this.edt_zip.Name = "edt_zip";
+            this.edt_zip.Properties.NullValuePrompt = "ZIP Code";
+            this.edt_zip.Size = new System.Drawing.Size(64, 20);
+            this.edt_zip.TabIndex = 10;
+            // 
+            // edt_Description
+            // 
+            this.edt_Description.Location = new System.Drawing.Point(6, 20);
+            this.edt_Description.Name = "edt_Description";
+            this.edt_Description.Properties.NullValuePrompt = "Description";
+            this.edt_Description.Size = new System.Drawing.Size(174, 20);
+            this.edt_Description.TabIndex = 4;
+            // 
+            // edt_Lat
+            // 
+            this.edt_Lat.Location = new System.Drawing.Point(6, 70);
+            this.edt_Lat.Name = "edt_Lat";
+            this.edt_Lat.Properties.NullValuePrompt = "Latitude";
+            this.edt_Lat.Properties.UseMaskAsDisplayFormat = true;
+            this.edt_Lat.Size = new System.Drawing.Size(119, 20);
+            this.edt_Lat.TabIndex = 6;
+            // 
+            // edt_Lon
+            // 
+            this.edt_Lon.Location = new System.Drawing.Point(131, 70);
+            this.edt_Lon.Name = "edt_Lon";
+            this.edt_Lon.Properties.NullValuePrompt = "Longitude";
+            this.edt_Lon.Size = new System.Drawing.Size(119, 20);
+            this.edt_Lon.TabIndex = 7;
+            this.edt_Lon.EditValueChanged += new System.EventHandler(this.edt_Log_EditValueChanged);
+            // 
+            // edt_URL
+            // 
+            this.edt_URL.Location = new System.Drawing.Point(6, 96);
+            this.edt_URL.Name = "edt_URL";
+            this.edt_URL.Properties.NullValuePrompt = "URL";
+            this.edt_URL.Size = new System.Drawing.Size(244, 20);
+            this.edt_URL.TabIndex = 8;
+            // 
             // panelControl4
             // 
             this.panelControl4.Controls.Add(this.pictureBox1);
@@ -1735,215 +1892,28 @@ namespace ITXCatalogueManager.Forms
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // groupBox1
+            // panelControl2
             // 
-            this.groupBox1.Controls.Add(this.edt_address);
-            this.groupBox1.Controls.Add(this.edt_zip);
-            this.groupBox1.Controls.Add(this.edt_Description);
-            this.groupBox1.Controls.Add(this.edt_Lat);
-            this.groupBox1.Controls.Add(this.edt_Lon);
-            this.groupBox1.Controls.Add(this.edt_URL);
-            this.groupBox1.Location = new System.Drawing.Point(52, 123);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(253, 126);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Look Up Data";
+            this.panelControl2.Controls.Add(this.cwb1);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 0);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(462, 548);
+            this.panelControl2.TabIndex = 0;
             // 
-            // edt_URL
+            // cwb1
             // 
-            this.edt_URL.Location = new System.Drawing.Point(6, 96);
-            this.edt_URL.Name = "edt_URL";
-            this.edt_URL.Properties.NullValuePrompt = "URL";
-            this.edt_URL.Size = new System.Drawing.Size(244, 20);
-            this.edt_URL.TabIndex = 8;
-            // 
-            // edt_Lon
-            // 
-            this.edt_Lon.Location = new System.Drawing.Point(131, 70);
-            this.edt_Lon.Name = "edt_Lon";
-            this.edt_Lon.Properties.NullValuePrompt = "Longitude";
-            this.edt_Lon.Size = new System.Drawing.Size(119, 20);
-            this.edt_Lon.TabIndex = 7;
-            this.edt_Lon.EditValueChanged += new System.EventHandler(this.edt_Log_EditValueChanged);
-            // 
-            // edt_Lat
-            // 
-            this.edt_Lat.Location = new System.Drawing.Point(6, 70);
-            this.edt_Lat.Name = "edt_Lat";
-            this.edt_Lat.Properties.NullValuePrompt = "Latitude";
-            this.edt_Lat.Properties.UseMaskAsDisplayFormat = true;
-            this.edt_Lat.Size = new System.Drawing.Size(119, 20);
-            this.edt_Lat.TabIndex = 6;
-            // 
-            // edt_Description
-            // 
-            this.edt_Description.Location = new System.Drawing.Point(6, 20);
-            this.edt_Description.Name = "edt_Description";
-            this.edt_Description.Properties.NullValuePrompt = "Description";
-            this.edt_Description.Size = new System.Drawing.Size(174, 20);
-            this.edt_Description.TabIndex = 4;
-            // 
-            // edt_zip
-            // 
-            this.edt_zip.Location = new System.Drawing.Point(186, 20);
-            this.edt_zip.Name = "edt_zip";
-            this.edt_zip.Properties.NullValuePrompt = "ZIP Code";
-            this.edt_zip.Size = new System.Drawing.Size(64, 20);
-            this.edt_zip.TabIndex = 10;
-            // 
-            // edt_address
-            // 
-            this.edt_address.Location = new System.Drawing.Point(6, 44);
-            this.edt_address.Name = "edt_address";
-            this.edt_address.Properties.NullValuePrompt = "Address";
-            this.edt_address.Size = new System.Drawing.Size(244, 20);
-            this.edt_address.TabIndex = 9;
-            // 
-            // MetaData
-            // 
-            this.MetaData.Controls.Add(this.lue_locationType);
-            this.MetaData.Controls.Add(this.labelControl1);
-            this.MetaData.Controls.Add(this.labelControl2);
-            this.MetaData.Controls.Add(this.lue_City);
-            this.MetaData.Controls.Add(this.lue_state);
-            this.MetaData.Location = new System.Drawing.Point(52, 3);
-            this.MetaData.Name = "MetaData";
-            this.MetaData.Size = new System.Drawing.Size(253, 114);
-            this.MetaData.TabIndex = 14;
-            this.MetaData.TabStop = false;
-            this.MetaData.Text = "Input Data";
-            // 
-            // lue_state
-            // 
-            this.lue_state.Location = new System.Drawing.Point(6, 88);
-            this.lue_state.Name = "lue_state";
-            this.lue_state.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_state.Properties.DataSource = this.list_StatesBindingSource;
-            this.lue_state.Properties.DisplayMember = "Description_1";
-            this.lue_state.Properties.NullText = "";
-            this.lue_state.Properties.NullValuePrompt = "State";
-            this.lue_state.Properties.PopupFormSize = new System.Drawing.Size(100, 0);
-            this.lue_state.Properties.PopupView = this.gridLookUpEdit1View;
-            this.lue_state.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
-            this.lue_state.Properties.ValueMember = "ID_State_1";
-            this.lue_state.Size = new System.Drawing.Size(119, 20);
-            this.lue_state.TabIndex = 2;
-            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule12.ErrorText = "This value is not valid";
-            this.dxValidationProvider1.SetValidationRule(this.lue_state, conditionValidationRule12);
-            this.lue_state.EditValueChanged += new System.EventHandler(this.lue_state_EditValueChanged);
-            // 
-            // gridLookUpEdit1View
-            // 
-            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.States});
-            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // States
-            // 
-            this.States.FieldName = "Description_1";
-            this.States.Name = "States";
-            this.States.Visible = true;
-            this.States.VisibleIndex = 0;
-            // 
-            // lue_City
-            // 
-            this.lue_City.Location = new System.Drawing.Point(128, 88);
-            this.lue_City.Name = "lue_City";
-            this.lue_City.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_City.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_City", "ID_City", 45, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Cities", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_State", "ID_State", 52, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description_1", "Description_1", 74, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lue_City.Properties.DataSource = this.list_CitiesByStateBindingSource;
-            this.lue_City.Properties.DisplayMember = "Description";
-            this.lue_City.Properties.NullText = "";
-            this.lue_City.Properties.NullValuePrompt = "City";
-            this.lue_City.Properties.PopupFormMinSize = new System.Drawing.Size(119, 0);
-            this.lue_City.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
-            this.lue_City.Properties.ValueMember = "ID_City";
-            this.lue_City.Size = new System.Drawing.Size(119, 20);
-            this.lue_City.TabIndex = 3;
-            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule11.ErrorText = "Need to select a value";
-            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider1.SetValidationRule(this.lue_City, conditionValidationRule11);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(103, 69);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(49, 13);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "State/City";
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(103, 21);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(67, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Location Type";
-            // 
-            // lue_locationType
-            // 
-            this.lue_locationType.Location = new System.Drawing.Point(6, 40);
-            this.lue_locationType.Name = "lue_locationType";
-            this.lue_locationType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lue_locationType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_EntityType", "ID_Entity Type", 81, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Description", "Description", 62, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
-            this.lue_locationType.Properties.DataSource = this.list_EntityTypesBindingSource1;
-            this.lue_locationType.Properties.DisplayMember = "Description";
-            this.lue_locationType.Properties.NullText = "";
-            this.lue_locationType.Properties.NullValuePrompt = "Entity Type";
-            this.lue_locationType.Properties.PopupFormMinSize = new System.Drawing.Size(119, 0);
-            this.lue_locationType.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.UseEditorWidth;
-            this.lue_locationType.Properties.ValueMember = "ID_LocationType";
-            this.lue_locationType.Size = new System.Drawing.Size(244, 20);
-            this.lue_locationType.TabIndex = 1;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule10.ErrorText = "This value is not valid";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider1.SetValidationRule(this.lue_locationType, conditionValidationRule10);
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Save.ImageOptions.Image")));
-            this.btn_Save.Location = new System.Drawing.Point(61, 346);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(241, 85);
-            this.btn_Save.TabIndex = 10;
-            this.btn_Save.Text = "Save";
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // btn_refresh
-            // 
-            this.btn_refresh.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btn_refresh.ImageOptions.SvgImage")));
-            this.btn_refresh.Location = new System.Drawing.Point(183, 255);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(119, 85);
-            this.btn_refresh.TabIndex = 15;
-            this.btn_refresh.Text = "Refresh Map";
-            this.btn_refresh.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
-            // btn_preview
-            // 
-            this.btn_preview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_preview.ImageOptions.Image")));
-            this.btn_preview.Location = new System.Drawing.Point(61, 255);
-            this.btn_preview.Name = "btn_preview";
-            this.btn_preview.Size = new System.Drawing.Size(119, 85);
-            this.btn_preview.TabIndex = 9;
-            this.btn_preview.Text = "Look Up";
-            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
+            this.cwb1.ActivateBrowserOnCreation = false;
+// TODO: Code generation for '' failed because of Exception 'Invalid Primitive Type: System.IntPtr. Consider using CodeObjectCreateExpression.'.
+            this.cwb1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cwb1.Location = new System.Drawing.Point(2, 2);
+            this.cwb1.Name = "cwb1";
+            this.cwb1.Size = new System.Drawing.Size(458, 544);
+            this.cwb1.TabIndex = 0;
+            this.cwb1.FrameLoadStart += new System.EventHandler<CefSharp.FrameLoadStartEventArgs>(this.cwb1_FrameLoadStart);
+            this.cwb1.FrameLoadEnd += new System.EventHandler<CefSharp.FrameLoadEndEventArgs>(this.cwb1_FrameLoadEnd);
+            this.cwb1.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.cwb1_LoadingStateChanged);
+            this.cwb1.IsBrowserInitializedChanged += new System.EventHandler(this.cwb1_IsBrowserInitializedChanged);
             // 
             // XTP1
             // 
@@ -1956,6 +1926,10 @@ namespace ITXCatalogueManager.Forms
             this.XTP1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
             this.xtraTabPage2});
+            // 
+            // xtraFolderBrowserDialog1
+            // 
+            this.xtraFolderBrowserDialog1.SelectedPath = "xtraFolderBrowserDialog1";
             // 
             // frm_Location
             // 
@@ -1983,6 +1957,10 @@ namespace ITXCatalogueManager.Forms
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEdit12.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_state.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_City.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl7.Panel1)).EndInit();
             this.splitContainerControl7.Panel1.ResumeLayout(false);
@@ -2039,7 +2017,6 @@ namespace ITXCatalogueManager.Forms
             this.panelControl21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl22)).EndInit();
-            this.panelControl22.ResumeLayout(false);
             this.xtraTabPage11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl17.Panel1)).EndInit();
             this.splitContainerControl17.Panel1.ResumeLayout(false);
@@ -2098,8 +2075,6 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3.Panel1)).EndInit();
@@ -2108,22 +2083,20 @@ namespace ITXCatalogueManager.Forms
             this.splitContainerControl3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl3)).EndInit();
             this.splitContainerControl3.ResumeLayout(false);
+            this.MetaData.ResumeLayout(false);
+            this.MetaData.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.edt_address.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_zip.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Description.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.edt_URL.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Lon.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Lat.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_Description.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_zip.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.edt_address.Properties)).EndInit();
-            this.MetaData.ResumeLayout(false);
-            this.MetaData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_state.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_City.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lue_locationType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.XTP1)).EndInit();
             this.XTP1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -2192,8 +2165,6 @@ namespace ITXCatalogueManager.Forms
         private DevExpress.XtraEditors.PanelControl panelControl21;
         private System.Windows.Forms.PictureBox pictureBox6;
         private DevExpress.XtraEditors.PanelControl panelControl22;
-        private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser5;
-        private System.Windows.Forms.WebBrowser webBrowser5;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage11;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl17;
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
@@ -2274,8 +2245,8 @@ namespace ITXCatalogueManager.Forms
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private CefSharp.WinForms.ChromiumWebBrowser chromiumWebBrowser1;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private DevExpress.XtraTab.XtraTabControl XTP1;
+        private CefSharp.WinForms.ChromiumWebBrowser cwb1;
+        private DevExpress.XtraEditors.XtraFolderBrowserDialog xtraFolderBrowserDialog1;
     }
 }

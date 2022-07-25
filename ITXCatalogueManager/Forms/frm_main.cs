@@ -75,7 +75,8 @@ namespace ITXCatalogueManager
 
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+
+            it.Close();
         }
     }
 }
